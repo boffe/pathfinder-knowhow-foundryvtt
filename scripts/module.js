@@ -22,25 +22,17 @@ Hooks.once("init", () => {
   });
 });
 
-// Add a button to open KnowHow — try multiple approaches for compatibility
+// Add a button to open KnowHow in the token scene controls
 Hooks.on("getSceneControlButtons", (controls) => {
-  // Foundry v12+: controls may be an array or an object
-  if (Array.isArray(controls)) {
-    controls.push({
-      name: "knowhow",
-      title: game.i18n.localize("KNOWHOW.ButtonTitle"),
-      icon: "fas fa-book-open",
-      layer: "controls",
-      visible: true,
-      tools: [{
-        name: "open",
-        title: game.i18n.localize("KNOWHOW.ButtonTitle"),
-        icon: "fas fa-book-open",
-        onClick: () => new KnowHowApp().render(true),
-        button: true,
-      }],
-    });
-  }
+  controls.tokens.tools.knowhow = {
+    name: "knowhow",
+    title: "KNOWHOW.ButtonTitle",
+    icon: "fas fa-book-open",
+    order: Object.keys(controls.tokens.tools).length,
+    button: true,
+    visible: true,
+    onChange: () => new KnowHowApp().render(true),
+  };
 });
 
 // Fallback: also add a chat command /knowhow
