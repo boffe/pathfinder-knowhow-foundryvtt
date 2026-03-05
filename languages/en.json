@@ -1,0 +1,44 @@
+{
+  "KNOWHOW": {
+    "Title": "KnowHow",
+    "ButtonTitle": "Campaign Knowledge",
+    "Settings": {
+      "ApiUrl": {
+        "Name": "KnowHow URL",
+        "Hint": "Base URL of your KnowHow instance (e.g. http://localhost:3000)"
+      },
+      "ApiKey": {
+        "Name": "API Key",
+        "Hint": "API key for authenticating with KnowHow"
+      }
+    },
+    "Tabs": {
+      "Ask": "Ask",
+      "Save": "Save"
+    },
+    "Ask": {
+      "Placeholder": "Ask about your campaign...",
+      "Category": "Category filter",
+      "AllCategories": "All Categories",
+      "Submit": "Ask",
+      "Asking": "Thinking...",
+      "Sources": "Sources",
+      "NoAnswer": "No answer received."
+    },
+    "Save": {
+      "ContentPlaceholder": "Paste or type your campaign notes here...",
+      "Category": "Category",
+      "AutoDetect": "Auto-detect",
+      "Submit": "Save Entry",
+      "Saving": "Saving...",
+      "Success": "Entry saved successfully!",
+      "Error": "Failed to save entry."
+    },
+    "Errors": {
+      "NoUrl": "KnowHow URL is not configured. Go to Module Settings.",
+      "NoKey": "KnowHow API Key is not configured. Go to Module Settings.",
+      "NetworkError": "Could not reach KnowHow server.",
+      "ServerError": "Server error: {status}"
+    }
+  }
+}

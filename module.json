@@ -1,0 +1,28 @@
+{
+  "id": "pathfinder-knowhow",
+  "title": "Pathfinder KnowHow",
+  "description": "Connect to your Pathfinder KnowHow campaign knowledge base. Ask questions about your campaign notes and save new entries directly from Foundry VTT.",
+  "version": "1.0.0",
+  "authors": [
+    {
+      "name": "Pathfinder KnowHow"
+    }
+  ],
+  "compatibility": {
+    "minimum": "12",
+    "verified": "12"
+  },
+  "esmodules": [
+    "scripts/module.js"
+  ],
+  "styles": [
+    "styles/knowhow.css"
+  ],
+  "languages": [
+    {
+      "lang": "en",
+      "name": "English",
+      "path": "languages/en.json"
+    }
+  ]
+}

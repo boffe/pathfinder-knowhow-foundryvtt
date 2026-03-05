@@ -1,0 +1,194 @@
+/* Pathfinder KnowHow – Foundry VTT Module Styles */
+/* Scoped to .knowhow-window to avoid style leaks */
+
+.knowhow-window .window-content {
+  padding: 0;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+}
+
+/* Tab bar */
+.knowhow-tabs {
+  display: flex;
+  border-bottom: 2px solid #78350f;
+  flex-shrink: 0;
+}
+
+.knowhow-tab {
+  flex: 1;
+  padding: 8px 0;
+  background: transparent;
+  border: none;
+  color: #a8a29e;
+  font-size: 14px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: color 0.15s, border-color 0.15s;
+  border-bottom: 2px solid transparent;
+  margin-bottom: -2px;
+}
+
+.knowhow-tab:hover {
+  color: #fbbf24;
+}
+
+.knowhow-tab.active {
+  color: #fbbf24;
+  border-bottom-color: #fbbf24;
+}
+
+/* Panels */
+.knowhow-panel {
+  padding: 10px;
+  display: flex;
+  flex-direction: column;
+  flex: 1;
+  overflow: hidden;
+}
+
+/* Form elements */
+.knowhow-form-group {
+  margin-bottom: 8px;
+}
+
+.knowhow-form-row {
+  display: flex;
+  gap: 6px;
+  margin-bottom: 8px;
+  flex-shrink: 0;
+}
+
+.knowhow-window input[type="text"],
+.knowhow-window textarea,
+.knowhow-window select {
+  background: #1c1917;
+  border: 1px solid #44403c;
+  color: #e7e5e4;
+  border-radius: 4px;
+  padding: 6px 8px;
+  font-size: 13px;
+  width: 100%;
+}
+
+.knowhow-window textarea {
+  resize: vertical;
+  font-family: inherit;
+}
+
+.knowhow-window select {
+  width: auto;
+  min-width: 140px;
+}
+
+.knowhow-window input:focus,
+.knowhow-window textarea:focus,
+.knowhow-window select:focus {
+  border-color: #b45309;
+  outline: none;
+  box-shadow: 0 0 0 1px #b45309;
+}
+
+/* Buttons */
+.knowhow-btn {
+  background: #b45309;
+  color: #fff;
+  border: none;
+  border-radius: 4px;
+  padding: 6px 16px;
+  font-size: 13px;
+  font-weight: 600;
+  cursor: pointer;
+  white-space: nowrap;
+  transition: background 0.15s;
+}
+
+.knowhow-btn:hover {
+  background: #d97706;
+}
+
+.knowhow-btn:disabled {
+  background: #44403c;
+  color: #78716c;
+  cursor: not-allowed;
+}
+
+/* Answer area */
+.knowhow-answer-area {
+  flex: 1;
+  overflow-y: auto;
+  margin-top: 4px;
+  padding: 4px;
+  min-height: 0;
+}
+
+.knowhow-answer-text {
+  color: #e7e5e4;
+  font-size: 13px;
+  line-height: 1.5;
+  margin-bottom: 10px;
+}
+
+.knowhow-loading {
+  color: #78716c;
+  text-align: center;
+  padding: 20px;
+  font-style: italic;
+}
+
+.knowhow-error {
+  color: #fca5a5;
+  font-size: 13px;
+}
+
+.knowhow-success {
+  color: #86efac;
+  font-size: 13px;
+}
+
+/* Sources */
+.knowhow-sources h4 {
+  color: #a8a29e;
+  font-size: 12px;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  margin: 8px 0 4px;
+  border-top: 1px solid #44403c;
+  padding-top: 8px;
+}
+
+.knowhow-source-card {
+  background: #1c1917;
+  border: 1px solid #44403c;
+  border-radius: 4px;
+  padding: 6px 8px;
+  margin-bottom: 4px;
+  display: flex;
+  align-items: flex-start;
+  gap: 6px;
+}
+
+.knowhow-source-snippet {
+  color: #a8a29e;
+  font-size: 12px;
+  line-height: 1.4;
+}
+
+/* Category badges */
+.knowhow-badge {
+  display: inline-block;
+  font-size: 10px;
+  font-weight: 600;
+  padding: 1px 6px;
+  border-radius: 3px;
+  border: 1px solid;
+  white-space: nowrap;
+  flex-shrink: 0;
+}
+
+/* Save status */
+.knowhow-save-status {
+  margin-top: 4px;
+  font-size: 13px;
+  min-height: 20px;
+}
