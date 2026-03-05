@@ -97,10 +97,6 @@ export class KnowHowApp extends Application {
           <textarea class="knowhow-save-content" rows="8" placeholder="${data.i18n.savePlaceholder}"></textarea>
         </div>
         <div class="knowhow-form-row">
-          <select class="knowhow-save-category">
-            <option value="">${data.i18n.autoDetect}</option>
-            ${categoryOptions}
-          </select>
           <button class="knowhow-btn knowhow-save-submit">${data.i18n.saveSubmit}</button>
         </div>
         <div class="knowhow-save-status"></div>
@@ -183,27 +179,17 @@ export class KnowHowApp extends Application {
 
     const btn = html.find(".knowhow-save-submit");
     const status = html.find(".knowhow-save-status");
-    let category = html.find(".knowhow-save-category").val();
 
     btn.prop("disabled", true).text(game.i18n.localize("KNOWHOW.Save.Saving"));
     status.html("").removeClass("knowhow-error knowhow-success");
 
     try {
-      let finalContent = content;
-
-      if (!category) {
-        // Auto-detect
-        const detected = await this.api.detectAndFormat(content);
-        category = detected.category;
-        finalContent = detected.content;
-      }
-
-      await this.api.saveEntry(category, finalContent);
+      const detected = await this.api.detectAndFormat(content);
+      await this.api.saveEntry(detected.category, detected.content);
 
       status.addClass("knowhow-success").text(game.i18n.localize("KNOWHOW.Save.Success"));
       ui.notifications.info(game.i18n.localize("KNOWHOW.Save.Success"));
       contentEl.val("");
-      html.find(".knowhow-save-category").val("");
     } catch (err) {
       status.addClass("knowhow-error").text(err.message);
       ui.notifications.error(err.message);

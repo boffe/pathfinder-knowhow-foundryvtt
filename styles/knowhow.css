@@ -1,5 +1,5 @@
 /* Pathfinder KnowHow – Foundry VTT Module Styles */
-/* Scoped to .knowhow-window to avoid style leaks */
+/* Inherits Foundry's native theme; only overrides what's needed */
 
 .knowhow-window .window-content {
   padding: 0;
@@ -11,36 +11,36 @@
 /* Tab bar */
 .knowhow-tabs {
   display: flex;
-  border-bottom: 2px solid #78350f;
+  border-bottom: 1px solid var(--color-border-light-tertiary, #999);
   flex-shrink: 0;
 }
 
 .knowhow-tab {
   flex: 1;
-  padding: 8px 0;
+  padding: 6px 0;
   background: transparent;
   border: none;
-  color: #a8a29e;
-  font-size: 14px;
+  color: var(--color-text-light-6, #999);
+  font-size: 13px;
   font-weight: 600;
   cursor: pointer;
   transition: color 0.15s, border-color 0.15s;
   border-bottom: 2px solid transparent;
-  margin-bottom: -2px;
+  margin-bottom: -1px;
 }
 
 .knowhow-tab:hover {
-  color: #fbbf24;
+  color: var(--color-text-dark-primary, #191813);
 }
 
 .knowhow-tab.active {
-  color: #fbbf24;
-  border-bottom-color: #fbbf24;
+  color: var(--color-text-dark-primary, #191813);
+  border-bottom-color: var(--color-border-dark-primary, #191813);
 }
 
 /* Panels */
 .knowhow-panel {
-  padding: 10px;
+  padding: 8px;
   display: flex;
   flex-direction: column;
   flex: 1;
@@ -49,54 +49,24 @@
 
 /* Form elements */
 .knowhow-form-group {
-  margin-bottom: 8px;
+  margin-bottom: 6px;
 }
 
 .knowhow-form-row {
   display: flex;
-  gap: 6px;
-  margin-bottom: 8px;
+  gap: 4px;
+  margin-bottom: 6px;
   flex-shrink: 0;
 }
 
-.knowhow-window input[type="text"],
-.knowhow-window textarea,
-.knowhow-window select {
-  background: #1c1917;
-  border: 1px solid #44403c;
-  color: #e7e5e4;
-  border-radius: 4px;
-  padding: 6px 8px;
-  font-size: 13px;
-  width: 100%;
-}
-
-.knowhow-window textarea {
-  resize: vertical;
-  font-family: inherit;
-}
-
-.knowhow-window select {
-  width: auto;
-  min-width: 140px;
-}
-
-.knowhow-window input:focus,
-.knowhow-window textarea:focus,
-.knowhow-window select:focus {
-  border-color: #b45309;
-  outline: none;
-  box-shadow: 0 0 0 1px #b45309;
-}
-
-/* Buttons */
+/* Buttons — compact, Foundry-native feel */
 .knowhow-btn {
-  background: #b45309;
+  background: var(--color-shadow-primary, #b45309);
   color: #fff;
   border: none;
-  border-radius: 4px;
-  padding: 6px 16px;
-  font-size: 13px;
+  border-radius: 3px;
+  padding: 4px 12px;
+  font-size: 12px;
   font-weight: 600;
   cursor: pointer;
   white-space: nowrap;
@@ -104,12 +74,11 @@
 }
 
 .knowhow-btn:hover {
-  background: #d97706;
+  background: var(--color-shadow-highlight, #d97706);
 }
 
 .knowhow-btn:disabled {
-  background: #44403c;
-  color: #78716c;
+  opacity: 0.5;
   cursor: not-allowed;
 }
 
@@ -123,45 +92,44 @@
 }
 
 .knowhow-answer-text {
-  color: #e7e5e4;
   font-size: 13px;
   line-height: 1.5;
-  margin-bottom: 10px;
+  margin-bottom: 8px;
 }
 
 .knowhow-loading {
-  color: #78716c;
   text-align: center;
   padding: 20px;
   font-style: italic;
+  opacity: 0.6;
 }
 
 .knowhow-error {
-  color: #fca5a5;
+  color: #dc2626;
   font-size: 13px;
 }
 
 .knowhow-success {
-  color: #86efac;
+  color: #16a34a;
   font-size: 13px;
 }
 
 /* Sources */
 .knowhow-sources h4 {
-  color: #a8a29e;
-  font-size: 12px;
+  font-size: 11px;
   text-transform: uppercase;
   letter-spacing: 0.05em;
-  margin: 8px 0 4px;
-  border-top: 1px solid #44403c;
-  padding-top: 8px;
+  margin: 6px 0 4px;
+  border-top: 1px solid var(--color-border-light-tertiary, #ccc);
+  padding-top: 6px;
+  opacity: 0.7;
 }
 
 .knowhow-source-card {
-  background: #1c1917;
-  border: 1px solid #44403c;
-  border-radius: 4px;
-  padding: 6px 8px;
+  background: rgba(0, 0, 0, 0.06);
+  border: 1px solid var(--color-border-light-tertiary, #ccc);
+  border-radius: 3px;
+  padding: 5px 7px;
   margin-bottom: 4px;
   display: flex;
   align-items: flex-start;
@@ -169,16 +137,16 @@
 }
 
 .knowhow-source-snippet {
-  color: #a8a29e;
-  font-size: 12px;
+  font-size: 11px;
   line-height: 1.4;
+  opacity: 0.8;
 }
 
 /* Category badges */
 .knowhow-badge {
   display: inline-block;
   font-size: 10px;
-  font-weight: 600;
+  font-weight: 700;
   padding: 1px 6px;
   border-radius: 3px;
   border: 1px solid;
@@ -190,5 +158,5 @@
 .knowhow-save-status {
   margin-top: 4px;
   font-size: 13px;
-  min-height: 20px;
+  min-height: 18px;
 }
