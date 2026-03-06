@@ -48,9 +48,10 @@ export class KnowHowApp extends Application {
   }
 
   async _renderInner(data) {
-    const html = document.createElement("div");
-    html.innerHTML = this._buildHTML(data);
-    return $(html.children);
+    const wrapper = document.createElement("div");
+    wrapper.classList.add("knowhow-body");
+    wrapper.innerHTML = this._buildHTML(data);
+    return $(wrapper);
   }
 
   _buildHTML(data) {

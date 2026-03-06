@@ -8,6 +8,13 @@
   flex-direction: column;
 }
 
+.knowhow-body {
+  display: flex;
+  flex-direction: column;
+  flex: 1;
+  overflow: hidden;
+}
+
 /* Tab bar */
 .knowhow-tabs {
   display: flex;
