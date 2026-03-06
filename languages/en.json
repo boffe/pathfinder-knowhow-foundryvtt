@@ -26,10 +26,15 @@
       "NoAnswer": "No answer received."
     },
     "Save": {
-      "ContentPlaceholder": "Paste or type your campaign notes here...",
-      "Category": "Category",
-      "AutoDetect": "Auto-detect",
+      "ContentPlaceholder": "Paste raw notes, stat blocks, descriptions...",
+      "DetectFormat": "Detect & Format",
+      "Detecting": "Detecting & formatting...",
+      "ReviewEntry": "Review Entry",
+      "DetectedCategory": "Detected Category",
+      "Content": "Content",
+      "NoFormatHint": "No formatting configured for this category — content shown as-is.",
       "Submit": "Save Entry",
+      "Cancel": "Cancel",
       "Saving": "Saving...",
       "Success": "Entry saved successfully!",
       "Error": "Failed to save entry."

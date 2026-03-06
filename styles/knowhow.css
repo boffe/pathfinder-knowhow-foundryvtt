@@ -59,6 +59,16 @@
   flex-shrink: 0;
 }
 
+.knowhow-label {
+  display: block;
+  font-size: 11px;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  margin-bottom: 3px;
+  opacity: 0.7;
+}
+
 /* Buttons — compact, Foundry-native feel */
 .knowhow-btn {
   background: var(--color-shadow-primary, #b45309);
@@ -80,6 +90,23 @@
 .knowhow-btn:disabled {
   opacity: 0.5;
   cursor: not-allowed;
+}
+
+.knowhow-btn-secondary {
+  background: transparent;
+  color: var(--color-text-dark-primary, #191813);
+  border: 1px solid var(--color-border-light-tertiary, #999);
+  border-radius: 3px;
+  padding: 4px 12px;
+  font-size: 12px;
+  font-weight: 600;
+  cursor: pointer;
+  white-space: nowrap;
+  transition: background 0.15s, border-color 0.15s;
+}
+
+.knowhow-btn-secondary:hover {
+  border-color: var(--color-border-dark-primary, #191813);
 }
 
 /* Answer area */
@@ -152,6 +179,53 @@
   border: 1px solid;
   white-space: nowrap;
   flex-shrink: 0;
+}
+
+/* Save tab views */
+.knowhow-save-input-view,
+.knowhow-save-preview-view {
+  display: flex;
+  flex-direction: column;
+  flex: 1;
+  overflow: hidden;
+}
+
+.knowhow-save-preview-view {
+  overflow-y: auto;
+}
+
+.knowhow-preview-header h4 {
+  font-size: 12px;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  margin: 0 0 8px;
+  padding-bottom: 6px;
+  border-bottom: 1px solid var(--color-border-light-tertiary, #ccc);
+}
+
+.knowhow-preview-content-group {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  min-height: 0;
+}
+
+.knowhow-preview-content-group textarea {
+  flex: 1;
+  min-height: 80px;
+}
+
+.knowhow-format-hint {
+  display: block;
+  font-size: 11px;
+  opacity: 0.6;
+  font-style: italic;
+  margin-top: 2px;
+}
+
+.knowhow-preview-actions {
+  margin-top: 4px;
 }
 
 /* Save status */

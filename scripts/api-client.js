@@ -69,13 +69,13 @@ export class KnowHowAPI {
 
   /**
    * Auto-detect category and format content.
-   * @param {string} content
-   * @returns {Promise<{category: string, content: string}>}
+   * @param {string} rawContent
+   * @returns {Promise<{category: string, formattedContent: string, formatted: boolean}>}
    */
-  async detectAndFormat(content) {
+  async detectAndFormat(rawContent) {
     return this.#fetch("/api/detect-and-format", {
       method: "POST",
-      body: JSON.stringify({ content }),
+      body: JSON.stringify({ rawContent }),
     });
   }
 }
