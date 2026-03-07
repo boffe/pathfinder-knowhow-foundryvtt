@@ -250,3 +250,15 @@
   font-size: 13px;
   min-height: 18px;
 }
+
+/* Journal page "Save to KnowHow" button */
+.knowhow-journal-save {
+  margin-left: 4px;
+  color: var(--color-text-light-6, #999);
+  font-size: 14px;
+  transition: color 0.15s;
+}
+
+.knowhow-journal-save:hover {
+  color: var(--color-shadow-primary, #b45309);
+}
