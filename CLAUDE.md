@@ -9,7 +9,7 @@ Foundry VTT module (v12+) that connects to an external Pathfinder KnowHow API se
 ## Architecture
 
 - **`module.json`** — Foundry module manifest. Entry point is `scripts/module.js`. Module ID: `pathfinder-knowhow`.
-- **`scripts/module.js`** — Registers settings (`apiUrl`, `apiKey`), adds a scene control button via `getSceneControlButtons` hook (v12 object-based API on `controls.tokens.tools`), and a `/knowhow` chat command.
+- **`scripts/module.js`** — Registers settings (`apiUrl`, `apiKey`), adds a scene control button via `getSceneControlButtons` hook (v12 object-based API on `controls.tokens.tools`), and chat commands (`/knowhow`, `/kh`, `/kh ask`, `/kh save`). Chat command responses are whispered to the invoking user.
 - **`scripts/knowhow-app.js`** — `KnowHowApp` extends Foundry's `Application`. Renders inline HTML (no template file) with two tabs: **Ask** (query with optional category filter) and **Save** (auto-detects category via API). Uses jQuery via Foundry's built-in `$`.
 - **`scripts/api-client.js`** — `KnowHowAPI` class wrapping three REST endpoints: `POST /api/query`, `POST /api/entries`, `POST /api/detect-and-format`. Uses private class fields for settings. Auth via `X-API-Key` header.
 - **`styles/knowhow.css`** — Scoped under `.knowhow-window`. Inherits Foundry's native theme via CSS variables rather than forcing its own color scheme.
@@ -21,7 +21,8 @@ Foundry VTT module (v12+) that connects to an external Pathfinder KnowHow API se
 - Categories (NPC, Location, Event, Equipment, Faction, Lore, Spell, Feat, Session Notes) are hardcoded in `knowhow-app.js` with per-category badge colors in `CATEGORY_COLORS`.
 - CSS uses Foundry CSS variables (`--color-text-dark-primary`, `--color-border-light-tertiary`, etc.) to stay compatible with Foundry's theme.
 - The Save tab always auto-detects category — no manual category selector.
-- Foundry globals available at runtime: `game`, `Hooks`, `Application`, `foundry`, `ui`, `$` (jQuery).
+- Chat commands: `/kh` opens the window, `/kh ask [Category] <question>` queries (optional bracket category filter), `/kh save <content>` auto-detects and saves in one step. All chat responses are whispered via `game.user.id`.
+- Foundry globals available at runtime: `game`, `Hooks`, `Application`, `foundry`, `ui`, `$` (jQuery), `ChatMessage`.
 
 ## Development
 
